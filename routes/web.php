@@ -23,7 +23,7 @@ Route::get('/profile/{id?}', [ContactController::class, 'profile'])->name('profi
 
 Route::get('/student/{id}', [PostController::class, 'index'])->name('student');
 
-Route::get('/', [SelamatController::class, 'selamat'])->name('selamat');
+Route::get('/selamat', [SelamatController::class, 'selamat'])->name('selamat');
 
 Auth::routes();
 
