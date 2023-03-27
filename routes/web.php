@@ -17,14 +17,6 @@ use App\Http\Controllers\SelamatController;
 |
 */
 
-Route::get('/tutor', function(){
-    return view('welcome');
-});
-
-Route::get('/', function () {
-    return view('master');
-});
-
 Route::get('/pengalaman-kuliah', [ContentController::class, 'content'])->name('content_kuliah');
 
 Route::get('/profile/{id?}', [ContactController::class, 'profile'])->name('profile');
@@ -32,3 +24,11 @@ Route::get('/profile/{id?}', [ContactController::class, 'profile'])->name('profi
 Route::get('/student/{id}', [PostController::class, 'index'])->name('student');
 
 Route::get('/', [SelamatController::class, 'selamat'])->name('selamat');
+
+Auth::routes();
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
